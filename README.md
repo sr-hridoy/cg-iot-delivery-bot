@@ -73,17 +73,6 @@ This represents a simplified caregiver/emergency notification scenario.
 | Move Backward          | `LEFT Arrow`  | Moves the robot backward                           |
 | Toggle Emergency Alert | `E`           | Changes ICU state and displays the emergency route |
 
-## 🖼️ Simulation Preview
-
-Add screenshots of your running simulation here.
-
-Example:
-
-```markdown
-![Hospital Simulation](screenshots/hospital_simulation.png)
-```
-
-You can also add a GIF showing the robot moving and the emergency route being triggered.
 
 ## ⚙️ Installation & Usage
 
@@ -119,11 +108,9 @@ python main.py
 ```text
 cg-iot-delivery-bot/
 │
-├── main.py
+├── .gitignore
 ├── README.md
-├── requirements.txt
-└── screenshots/
-    └── hospital_simulation.png
+└── main.py
 ```
 
 > Update this section according to the actual files in the repository.
