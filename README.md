@@ -7,7 +7,7 @@
 
 ## 📌 Project Overview
 
-This project is a **2D Computer Graphics simulation of an autonomous medical delivery robot** navigating through a hospital environment.
+This project is a **2D Computer Graphics simulation of a medical delivery robot** navigating through a hospital environment.
 
 The simulation demonstrates how a healthcare delivery robot can move between different hospital zones, detect environmental boundaries, and generate an emergency route to the ICU.
 
@@ -65,14 +65,13 @@ This represents a simplified caregiver/emergency notification scenario.
 
 ## 🚀 Controls & Interaction
 
-| Action                 | Key / Input   | Function                                           |
-| ---------------------- | ------------- | -------------------------------------------------- |
-| Rotate Left            | `UP Arrow`    | Rotates the robot counter-clockwise                |
-| Rotate Right           | `DOWN Arrow`  | Rotates the robot clockwise                        |
-| Move Forward           | `RIGHT Arrow` | Moves the robot forward                            |
-| Move Backward          | `LEFT Arrow`  | Moves the robot backward                           |
-| Toggle Emergency Alert | `E`           | Changes ICU state and displays the emergency route |
-
+| Action | Key / Input | Function |
+|---|---|---|
+| Rotate Left | `UP Arrow` | Rotates the robot counter-clockwise |
+| Rotate Right | `DOWN Arrow` | Rotates the robot clockwise |
+| Move Forward | `RIGHT Arrow` | Moves the robot forward |
+| Move Backward | `LEFT Arrow` | Moves the robot backward |
+| Toggle Emergency Alert | `E` | Changes ICU state and displays the emergency route |
 
 ## ⚙️ Installation & Usage
 
@@ -101,8 +100,6 @@ Run the main Python file:
 python main.py
 ```
 
-> Replace `main.py` with the actual filename if your main source file has a different name.
-
 ## 📁 Project Structure
 
 ```text
@@ -112,8 +109,6 @@ cg-iot-delivery-bot/
 ├── README.md
 └── main.py
 ```
-
-> Update this section according to the actual files in the repository.
 
 ## 🎯 Learning Objectives
 
