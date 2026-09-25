@@ -1,57 +1,156 @@
 # IoT Medicine Delivery & Caregiver Bot Tracker
 
-![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg) ![OpenGL](https://img.shields.io/badge/OpenGL-PyOpenGL-red.svg) ![Computer Graphics](https://img.shields.io/badge/Computer_Graphics-Simulation-green.svg) ![Track B](https://img.shields.io/badge/Track_B-Research_Visualizer-orange.svg)
+![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![PyOpenGL](https://img.shields.io/badge/OpenGL-PyOpenGL-red.svg)
+![Computer Graphics](https://img.shields.io/badge/Computer%20Graphics-Simulation-green.svg)
+![Track B](https://img.shields.io/badge/Track%20B-Research%20Visualizer-orange.svg)
 
-### 📌 Project Overview
----
-This repository contains a 2D Computer Graphics simulation of an autonomous medical delivery robot navigating a hospital floor plan. The project acts as a Research Visualizer to simulate how IoT robots process spatial boundaries, calculate kinematics, and generate navigation algorithms in real-time. 
+## 📌 Project Overview
 
-To ensure mathematical accuracy and hardware-like behavior, the robot's movement and sensor boundaries are strictly calculated using coordinate matrices and bitwise region codes.
+This project is a **2D Computer Graphics simulation of an autonomous medical delivery robot** navigating through a hospital environment.
 
-### 📊 Simulation Environment
----
-The models and environment are rendered using the standard PyOpenGL and GLUT libraries.
+The simulation demonstrates how a healthcare delivery robot can move between different hospital zones, detect environmental boundaries, and generate an emergency route to the ICU.
 
-*   The hospital architecture is mapped to a 3-zone standard system:
-    *   **Pharmacy:** The dark-gray starting base station for the delivery unit.
-    *   **General Ward:** Standard blue non-emergency patient rooms.
-    *   **ICU (Target Room):** The emergency destination that dynamically alters visual states during caregiver alerts.
+The project focuses on Computer Graphics concepts such as **2D transformations, line clipping, Bezier curves, geometric modeling, keyboard interaction, and state-based color changes**.
 
-### 🧠 Methodology & Architecture
----
-*   **2D Transformations (Kinematics):** Utilizes `glTranslatef` and `glRotatef` matrix operations to handle the forward, backward, and rotational movement of the robot based on its local center axis (simulating Automated Guided Vehicle mechanics).
-*   **Cohen-Sutherland Line Clipping (Dynamic Sensor FOV):** Implements bitwise operations to calculate 4-bit region codes, mathematically slicing the robot's green LiDAR sensor rays at the exact pixel they intersect with the hospital's outer boundaries.
-*   **Bezier Curves (Emergency Routing):** Uses a Cubic Bezier polynomial mathematical equation across four control points to generate a smooth, non-angular delivery trajectory from the pharmacy to the ICU.
-*   **Color Fill & Shape Drawing:** Uses OpenGL primitives (`GL_QUADS`, `GL_POLYGON`) to construct the hospital layout and the octagonal bot chassis. Features state-based color filling that instantly floods the ICU room with red pixels when triggered.
+> **Note:** This project is a graphical simulation inspired by an IoT-based medical delivery system. It does not represent a physical IoT robot or real medical device.
 
-### 🚀 Controls & Interaction
----
-The simulation achieves real-time interactivity with the following keyboard listener mappings:
+## 📊 Simulation Environment
 
-| Action | Key / Input | Function |
-| :--- | :--- | :--- |
-| **Rotate Left** | `UP Arrow` | Rotates the robot counter-clockwise on its axis |
-| **Rotate Right** | `DOWN Arrow` | Rotates the robot clockwise on its axis |
-| **Move Forward** | `RIGHT Arrow` | Drives forward in the current facing direction |
-| **Move Backward** | `LEFT Arrow` | Drives backward in the current facing direction |
-| **Toggle Alert** | `E` | Triggers ICU color flood and Bezier routing path |
+The hospital environment is created using **PyOpenGL and GLUT** and contains three main zones:
+
+* **Pharmacy:** The dark-gray starting/base station of the delivery robot.
+* **General Ward:** Blue patient-room area used as a normal hospital zone.
+* **ICU:** The emergency target room. Its visual state changes when an emergency alert is triggered.
+
+## 🧠 Methodology & Computer Graphics Concepts
+
+### 1. 2D Transformations
+
+The robot uses OpenGL transformation functions such as:
+
+* `glTranslatef()` for movement
+* `glRotatef()` for rotation
+
+These transformations allow the robot to move forward/backward according to its current direction and rotate around its center.
+
+### 2. Cohen-Sutherland Line Clipping
+
+The simulation uses the **Cohen-Sutherland line clipping algorithm** to calculate region codes and determine where sensor/FOV lines intersect the hospital boundary.
+
+The algorithm uses **4-bit region codes** to classify points relative to the clipping boundary.
+
+### 3. Cubic Bezier Curve
+
+A **Cubic Bezier Curve** is used to generate a smooth emergency routing path from the Pharmacy toward the ICU.
+
+The curve is calculated using four control points and provides a smoother route than a simple straight-line path.
+
+### 4. OpenGL Shape Drawing
+
+OpenGL primitives such as:
+
+* `GL_QUADS`
+* `GL_POLYGON`
+
+are used to construct the hospital environment and the robot body.
+
+The robot is modeled using a polygon-based chassis, while different colors represent different hospital areas and system states.
+
+### 5. State-Based Emergency Alert
+
+When the emergency alert is activated, the ICU changes its visual state and the emergency routing path is displayed.
+
+This represents a simplified caregiver/emergency notification scenario.
+
+## 🚀 Controls & Interaction
+
+| Action                 | Key / Input   | Function                                           |
+| ---------------------- | ------------- | -------------------------------------------------- |
+| Rotate Left            | `UP Arrow`    | Rotates the robot counter-clockwise                |
+| Rotate Right           | `DOWN Arrow`  | Rotates the robot clockwise                        |
+| Move Forward           | `RIGHT Arrow` | Moves the robot forward                            |
+| Move Backward          | `LEFT Arrow`  | Moves the robot backward                           |
+| Toggle Emergency Alert | `E`           | Changes ICU state and displays the emergency route |
+
+## 🖼️ Simulation Preview
+
+Add screenshots of your running simulation here.
+
+Example:
+
+```markdown
+![Hospital Simulation](screenshots/hospital_simulation.png)
+```
+
+You can also add a GIF showing the robot moving and the emergency route being triggered.
 
 ## ⚙️ Installation & Usage
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/sr-hridoy/cg-iot-delivery-bot.git
-   cd cg-iot-delivery-bot
-   ```
+### 1. Clone the Repository
 
-2. **Install dependencies:**
-   Ensure you have Python 3.8+ installed. Install the required packages using:
-   ```bash
-   pip install PyOpenGL PyOpenGL_accelerate
-   ```
+```bash
+git clone https://github.com/sr-hridoy/cg-iot-delivery-bot.git
+cd cg-iot-delivery-bot
+```
+
+### 2. Install Dependencies
+
+Make sure Python 3.8 or later is installed.
+
+Install the required packages:
+
+```bash
+pip install PyOpenGL PyOpenGL_accelerate
+```
+
+### 3. Run the Project
+
+Run the main Python file:
+
+```bash
+python main.py
+```
+
+> Replace `main.py` with the actual filename if your main source file has a different name.
+
+## 📁 Project Structure
+
+```text
+cg-iot-delivery-bot/
+│
+├── main.py
+├── README.md
+├── requirements.txt
+└── screenshots/
+    └── hospital_simulation.png
+```
+
+> Update this section according to the actual files in the repository.
+
+## 🎯 Learning Objectives
+
+This project demonstrates practical implementation of:
+
+* 2D geometric transformations
+* OpenGL primitives
+* Keyboard interaction
+* Cohen-Sutherland line clipping
+* Cubic Bezier curves
+* Coordinate systems
+* Robot movement and rotation
+* State-based graphical changes
+* Real-time computer graphics simulation
 
 ## 👨‍💻 Author
-**Md. Shaifur Rahman Hridoy**  
-*B.Sc. in Computer Science and Engineering, Leading University*  
 
-Feel free to reach out or open an issue if you have questions about the implementation or simulation methodology!
+**Md. Shaifur Rahman Hridoy**
+
+B.Sc. in Computer Science and Engineering
+Leading University, Bangladesh
+
+**Focus:** Computer Graphics, Artificial Intelligence & Autonomous Systems
+
+## 📄 License
+
+This project is developed for educational and academic purposes.
