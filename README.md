@@ -36,9 +36,22 @@ The simulation achieves real-time interactivity with the following keyboard list
 | **Move Backward** | `LEFT Arrow` | Drives backward in the current facing direction |
 | **Toggle Alert** | `E` | Triggers ICU color flood and Bezier routing path |
 
-### ⚙️ Installation & Usage
----
-1. Clone the repository:
+## ⚙️ Installation & Usage
+
+1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/sr-hridoy/cg-iot-delivery-bot.git](https://github.com/sr-hridoy/cg-iot-delivery-bot.git)
+   git clone https://github.com/sr-hridoy/cg-iot-delivery-bot.git
    cd cg-iot-delivery-bot
+   ```
+
+2. **Install dependencies:**
+   Ensure you have Python 3.8+ installed. Install the required packages using:
+   ```bash
+   pip install PyOpenGL PyOpenGL_accelerate
+   ```
+
+## 👨‍💻 Author
+**Md. Shaifur Rahman Hridoy**  
+*B.Sc. in Computer Science and Engineering, Leading University*  
+
+Feel free to reach out or open an issue if you have questions about the implementation or simulation methodology!
