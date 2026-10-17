@@ -1,4 +1,3 @@
-# ID: 0182310012101039
 # IoT Medicine Delivery & Caregiver Bot Tracker
 
 ![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)
